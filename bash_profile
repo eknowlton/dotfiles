@@ -13,8 +13,8 @@ if [ -d "$HOME/.composer/vendor/bin" ]; then
 fi
 
 # add bin from home directory
-if [ -d "$HOME/bin" ]; then
-  export PATH="$PATH:$home/bin"
+if [ -d "$HOME/.bin" ]; then
+  export PATH="$PATH:$HOME/.bin"
 fi
 
 # add usr bin to path
