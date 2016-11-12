@@ -109,5 +109,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_use_caching = 0
 
 let g:ctrlp_user_command = ['ag %s --files-with-matches -g ""']
-let g:ctrlp_user_command += ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+if isdirectory('.git')
+    let g:ctrlp_user_command += ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+endif
 
