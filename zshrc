@@ -53,9 +53,6 @@ plugins=(git git-flow docker brew git-extras laravel4 laravel5)
 # export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ethan/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
-[[ -e ~/.common_profile ]] && emulate sh -c 'source ~/.common_profile'
-
 source $ZSH/oh-my-zsh.sh
 
 if [[ -n "$SSH_CONNECTION" ]]; then
@@ -91,4 +88,4 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.bash_profile
+
