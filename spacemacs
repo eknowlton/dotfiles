@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     auto-completion
      yaml
      ranger
      html
@@ -313,7 +314,11 @@ you should place your code here."
 
   (setq comment-use-syntax t)
 
+  (setq php-mode-coding-style (quote psr2)
+        flycheck-phpcs-standard "PSR2"
   )
+
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
