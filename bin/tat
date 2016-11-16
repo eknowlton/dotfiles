@@ -2,7 +2,7 @@
 #
 # Attach or create tmux session named the same as current directory.
 
-session_name="$(basename "$PWD" | tr . -)"
+session_name="$(pwd |rev| awk -F / '{print $1,$2}' | rev | sed s_\ _/_ | sed s_/_-_g | tr . -)"
 
 not_in_tmux() {
   [ -z "$TMUX" ]
