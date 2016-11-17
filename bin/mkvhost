@@ -1,0 +1,87 @@
+#!/bin/bash
+
+# hosts folder
+HOSTSDIR=/home/zenith/Sites
+
+# DOMAIN to set up, ex: working.dev
+DOMAIN=$1
+
+# User to set permissions for - the user account
+USER=zenith
+GROUP=zenith
+
+# Where to put new host file
+HOSTSFILEDIR=/home/zenith/Sites/vhosts/ 
+
+TEMPLATE="<VirtualHost *:80>
+      ServerAdmin admin@$DOMAIN
+      ServerName $DOMAIN
+      ServerAlias $DOMAIN
+      DocumentRoot $HOSTSDIR/$DOMAIN/public
+      <Directory />
+        AllowOverride All
+      </Directory>
+      <Directory $HOSTSDIR/$DOMAIN/public>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride all
+        Require all granted
+      </Directory>
+      ErrorLog $HOSTSDIR/$DOMAIN/logs/error.log
+      LogLevel error
+      CustomLog $HOSTSDIR/$DOMAIN/logs/access.log combined
+    </VirtualHost>"
+
+
+# Create folder for new DOMAIN
+if [ -d "$HOSTSDIR/$DOMAIN" ]
+then
+  echo "Host directory already created."    
+else
+  mkdir "$HOSTSDIR/$DOMAIN"
+  echo "New host directory created."
+fi
+
+if [ -d "$HOSTSDIR/$DOMAIN/public" ]
+then
+  echo "Public directory already created."
+else
+  mkdir "$HOSTSDIR/$DOMAIN/public"
+  echo "New host public directory created."
+fi
+
+if [ -d "$HOSTSDIR/$DOMAIN/logs" ]
+  mkdir "$HOSTSDIR/$DOMAIN/logs"
+  touch "$HOSTSDIR/$DOMAIN/logs/error.log"
+  touch "$HOSTSDIR/$DOMAIN/logs/access.log"
+  echo "Created logs folder, error log and access log."
+then
+  echo "Logs folder already exists."
+fi
+
+
+# Create new host file
+if [ -d "$HOSTSFILEDIR" ]
+then
+  touch "$HOSTSFILEDIR/$DOMAIN"
+  echo "$TEMPLATE" >> "$HOSTSFILEDIR/$DOMAIN"
+  echo "The host $DOMAIN has been added to the host file and pointed to 127.0.0.1"
+else
+  echo "The hosts file directory does not exist or you do not have permission."
+  exit 1;
+fi
+
+echo "Updating File Permissions on document root."
+chown -R $USER:$GROUP $HOSTSDIR/$DOMAIN
+chmod -R 755 $HOSTSDIR/$DOMAIN
+
+echo "Updating File Permissions on host file."
+chown -R $USER:$GROUP $HOSTSFILEDIR/$DOMAIN
+chmod -R 751 $HOSTSFILEDIR/$DOMAIN
+
+# Update Hosts File
+echo "127.0.0.1 $DOMAIN" >> /etc/hosts
+
+echo "Don't forget to restart apache: sudo apachectl restart"
+
+echo "Your new host '$DOMAIN' has been setup."
+echo "Points to '$HOSTSDIR/$DOMAIN/public'."
