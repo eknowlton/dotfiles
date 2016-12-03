@@ -1,3 +1,9 @@
 [submodule "xmonad-config"]
 	path = xmonad
 	url = https://github.com/vicfryzel/xmonad-config.git
+[submodule "vim/vundle"]
+	path = vim/vundle
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "xmonad"]
+	path = xmonad
+	url = https://github.com/vicfryzel/xmonad-config.git
