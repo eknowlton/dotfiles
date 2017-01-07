@@ -23,6 +23,11 @@ if [ -d "/Volumes/external" ]; then
   export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools/24.0.2"
 fi
 
+if [ -d "/media/storage/android-sdk-linux" ]; then
+  export ANDROID_HOME="/media/storage/android-sdk-linux"
+  export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools/23.0.1"
+fi
+
 # add mvim command
 export VISUAL="mvim -f"
 
