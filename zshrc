@@ -88,4 +88,10 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias gtprojects="cd /media/storage/projects"
+
+
+
+[ -n "$XTERM_VERSION" ] && sleep .1 && transset --id=$WINDOWID > /dev/null
+
 source ~/.bash_profile

@@ -113,5 +113,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
