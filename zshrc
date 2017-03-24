@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow docker brew git-extras laravel4 laravel5)
+plugins=(git git-flow docker git-extras laravel4 laravel5)
 
 # User configuration
 
@@ -89,9 +89,5 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gtprojects="cd /media/storage/projects"
-
-
-
-[ -n "$XTERM_VERSION" ] && transset --id=$WINDOWID > /dev/null
 
 source ~/.bash_profile
