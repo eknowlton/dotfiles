@@ -5,7 +5,7 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="clean"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -55,11 +55,11 @@ plugins=(git git-flow docker git-extras laravel4 laravel5)
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ -n "$SSH_CONNECTION" ]]; then
-  PROMPT='[%m]%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} : %{$fg[blue]%}%B%3c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
-else
-  PROMPT='%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} : %{$fg[blue]%}%B%3c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
-fi
+#if [[ -n "$SSH_CONNECTION" ]]; then
+#  PROMPT='[%m]%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} : %{$fg[blue]%}%B%3c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
+#else
+#  PROMPT='%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} : %{$fg[blue]%}%B%3c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
+#fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -91,3 +91,10 @@ export EDITOR='vim'
 alias gtprojects="cd /media/storage/projects"
 
 source ~/.bash_profile
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Add custom bin directory from ~
+export PATH="$PATH:$HOME/bin"
+
