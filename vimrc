@@ -16,16 +16,25 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ntpeters/vim-airline-colornum'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-startify'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'shougo/neocomplete.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'alvan/vim-closetag'
+Plugin 'yggdroot/indentline'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'stanangeloff/php.vim'
+Plugin 'othree/html5.vim'
+Plugin 'elzr/vim-json'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-ragtag'
+Plugin 'ekalinin/dockerfile.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,7 +51,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" VIM Settins
+" VIM Settings
 syntax on
 set number
 colorscheme default
@@ -91,3 +100,8 @@ set laststatus=2
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
+
+" iTerm2 OSX different cursor for different modes
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
