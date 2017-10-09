@@ -98,3 +98,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add custom bin directory from ~
 export PATH="$PATH:$HOME/bin"
 
+export PATH="/usr/local/sbin:$PATH"

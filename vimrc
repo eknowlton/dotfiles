@@ -45,6 +45,7 @@ filetype plugin indent on    " required
 " VIM Settins
 syntax on
 set number
+colorscheme default
 
 set modifiable
 set tabstop=2
