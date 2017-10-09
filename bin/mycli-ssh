@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Use mycli (http://mycli.net/) through ssh
+
+Usage:
+
+    $ mycli-ssh yourhost [extra args passed to mycli]
+
+"""
+import subprocess
+import sys
+import atexit
+import socket
+
+host = sys.argv[1]
+cfg = {}
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(('', 0))
+ip, port = s.getsockname()
+s.close()
+
+port = str(port)
+
+p = subprocess.Popen(['ssh',  '-L', '%s:localhost:3306' % port, '-Nf', host],
+                     stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+print('SSH tunnel process is: %s' % p.pid)
+atexit.register(p.kill)
+
+cnf = subprocess.check_output(['ssh', host, 'cat', '~/.my.cnf'],
+                              stderr=subprocess.STDOUT)
+for line in cnf.split('\n'):
+    if '=' in line:
+        k, v = line.split('=')
+        cfg[k.strip()] = v.strip()
+
+cmd = [
+    'mycli', '-u', cfg['user'], '-p', cfg['password'],
+    '-h', 'localhost', '-P', port, '-R', r'\t %s:\d> ' % host
+    ] + sys.argv[2:]
+subprocess.call(cmd)
