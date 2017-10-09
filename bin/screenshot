@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+escrotum -s ~/screenshots/%Y-%m-%H%M%S.png

@@ -1,115 +1,91 @@
-filetype plugin indent on 
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set spell spelllang=en_us
-set modifiable
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set number 
-set textwidth=0
-set wrapmargin=0
-set guifont=Monaco:h10
-set clipboard=unnamed
-set cursorline
-set list
-set listchars=trail:·,tab:··
-set guioptions-=L
-set guioptions-=r
-set autoindent
-set splitbelow
-set splitright
-
-set number
-set relativenumber
-
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'bling/vim-airline'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'alvan/vim-closetag'
 Plugin 'scrooloose/syntastic'
-Plugin 'mbbill/undotree'
-Plugin 'gregsexton/MatchTag'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'ntpeters/vim-airline-colornum'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-startify'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'shougo/neocomplete.vim'
 
-set clipboard=unnamed
+" Language Specific
+Plugin 'slim-template/vim-slim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'stanangeloff/php.vim'
 
-call vundle#end()
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" VIM Settins
+syntax on
+set number
+
+set modifiable
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+
+" Syntastic Default Settings
+" https://github.com/vim-syntastic/syntastic#settings
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-syntax enable
-set background=dark
-let g:solarized_termcolors=256
-
-colorscheme solarized
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_symbols.space = "\ua0"
-
-let g:closetag_filenames = "*.html,*.htm,*.php"
-
-autocmd StdinReadPre * let s:std_in=1
-
-let g:NERDTreeMapActivateNode="<F3>"
-let g:NERDTreeMapPreview="<F4>"
-let g:NERDTreeShowHidden=1
-let g:NERDTreeWinSize=60
-
-let g:ctrlp_working_path_mode=0
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2']
 let g:syntastic_html_checkers = ['html', 'twig', 'css', 'javascript']
 let g:syntastic_css_checkers = ['css']
 
-sign define SyntasticError text=⮀ texthl=error
-sign define SyntasticWarning text=⮁ texthl=Pl58870000d0ff8700b
-sign define SyntasticStyleError text=⮀ texthl=error
-sign define SyntasticStyleWarning text=⮁ texthl=tPl58870000d0ff8700b
-
-nnoremap <F5> :UndotreeToggle<cr>
-noremap <F3> :NERDTreeToggle<cr>i
-
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" ignore some folders and files for CtrlP indexing
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
-
-set grepprg=ag\ --nogroup\ --nocolor 
-
-nnoremap <silent> t :CtrlP<cr>
-
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_use_caching = 0
+
+nmap <Leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_user_command = ['ag %s --files-with-matches -g ""']
 if isdirectory('.git')
     let g:ctrlp_user_command += ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 endif
 
+" Airline Settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
+set laststatus=2
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
