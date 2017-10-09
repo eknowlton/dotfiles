@@ -52,6 +52,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
+set backspace=indent,eol,start
 
 " Syntastic Default Settings
 " https://github.com/vim-syntastic/syntastic#settings
