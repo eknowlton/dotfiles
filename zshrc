@@ -98,4 +98,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add custom bin directory from ~
 export PATH="$PATH:$HOME/bin"
 
+# HomeBrew path
 export PATH="/usr/local/sbin:$PATH"

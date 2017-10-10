@@ -23,6 +23,9 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'yggdroot/indentline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'thaerkh/vim-workspace'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -54,7 +57,8 @@ filetype plugin indent on    " required
 " VIM Settings
 syntax on
 set number
-colorscheme default
+set relativenumber
+colorscheme brogrammer
 
 set modifiable
 set tabstop=2
@@ -100,8 +104,19 @@ set laststatus=2
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " iTerm2 OSX different cursor for different modes
 "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+
+" NERDTree
+"autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Vim Workspace
+nnoremap <leader>s :ToggleWorkspace<CR>
+
