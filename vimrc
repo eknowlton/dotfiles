@@ -24,7 +24,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'thaerkh/vim-workspace'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -116,4 +115,5 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 map <C-n> :NERDTreeToggle<CR>
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
+" IndentLine
+"let g:indentLine_setColors = 0
