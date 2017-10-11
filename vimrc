@@ -26,6 +26,7 @@ Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'joonty/vdebug'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -61,12 +62,12 @@ set relativenumber
 colorscheme brogrammer
 
 set modifiable
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
 set autoindent
 set backspace=indent,eol,start
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Syntastic Default Settings
 " https://github.com/vim-syntastic/syntastic#settings
@@ -122,3 +123,10 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Vdebug Servers
 let g:vdebug_options = { 'path_maps': { '/home/vagrant/sites': '/Users/ethan/sites'}, 'server': '192.168.10.10' }
+
+" EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
