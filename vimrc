@@ -24,6 +24,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'joonty/vdebug'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -117,3 +119,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 " IndentLine
 "let g:indentLine_setColors = 0
+
+" Vdebug Servers
+let g:vdebug_options = { 'path_maps': { '/home/vagrant/sites': '/Users/ethan/sites'}, 'server': '192.168.10.10' }
