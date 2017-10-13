@@ -60,6 +60,7 @@ syntax on
 set number
 set relativenumber
 colorscheme brogrammer
+let mapleader=" "
 
 set modifiable
 set autoindent
@@ -127,6 +128,10 @@ let g:vdebug_options = { 'path_maps': { '/home/vagrant/sites': '/Users/ethan/sit
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+" vim json
+let g:vim_json_syntax_conceal = 0
+
+" Include Local vimrc
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
