@@ -27,6 +27,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'joonty/vdebug'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'chrisbra/Colorizer'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -61,7 +62,7 @@ set number
 set relativenumber
 colorscheme brogrammer
 let mapleader=" "
-
+set cursorline
 set modifiable
 set autoindent
 set backspace=indent,eol,start
@@ -70,6 +71,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 inoremap jk <ESC>
+
+" Set lazyredraw, speeds up navigation with syntax on
+set lazyredraw
 
 nnoremap <Leader>qq :qa<cr>
 nnoremap <Leader>qQ :qa!<cr>
@@ -122,10 +126,12 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " IndentLine
 "let g:indentLine_setColors = 0
