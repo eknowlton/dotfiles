@@ -165,8 +165,14 @@ nnoremap <leader>/ :Ag!<space>
 autocmd VimResized * :wincmd =
 set splitbelow
 set splitright
-nnoremap <leader>wl <c-w>>
-nnoremap <leader>wh <c-w><
+nnoremap <leader>wl <c-w>l
+nnoremap <leader>wh <c-w>h
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wL <c-w>>
+nnoremap <leader>wH <c-w><
+nnoremap <leader>wK <c-w>+
+nnoremap <leader>wJ <c-w>-
 nnoremap <leader>wd :q<cr>
 nnoremap <leader>wv :vsp<cr>
 nnoremap <leader>ws :sp<cr>
