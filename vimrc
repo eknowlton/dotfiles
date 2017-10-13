@@ -69,6 +69,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+inoremap jk <ESC>
+
+nnoremap <Leader>qq :qa<cr>
+nnoremap <Leader>qQ :qa!<cr>
 
 " Syntastic Default Settings
 " https://github.com/vim-syntastic/syntastic#settings
@@ -113,6 +117,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
 
 " NERDTree
 "autocmd vimenter * NERDTree
@@ -135,3 +141,41 @@ let g:vim_json_syntax_conceal = 0
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
+
+" LEADER KEY BINDINGS
+"----- Files
+nnoremap <leader>ff :CtrlP<cr>
+nnoremap <leader>fs :w<cr>
+nnoremap <leader>fS :wa<cr>
+nnoremap <leader>fx :x<CR>
+
+"----- Search
+set nohls
+set ignorecase
+set hlsearch
+set smartcase
+set incsearch
+nnoremap <leader>hh :nohl<cr>
+nnoremap <leader>ht :set hlsearch!<cr>
+nnoremap <leader>/ :Ag!<space>
+
+"----- Window
+autocmd VimResized * :wincmd =
+set splitbelow
+set splitright
+nnoremap <leader>wl <c-w>>
+nnoremap <leader>wh <c-w><
+nnoremap <leader>wd :q<cr>
+nnoremap <leader>wv :vsp<cr>
+nnoremap <leader>ws :sp<cr>
+
+"----- Buffers
+nnoremap <leader>br :e!<cr>
+nnoremap <leader>bR :bufdo e!<cr>:syntax enable<cr>
+nnoremap <leader>bd :bd<cr>
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bb :CtrlPBuffer<CR>
+nnoremap <leader>ls :ls<cr>
+nnoremap <leader>bk :bd!<space>
+
