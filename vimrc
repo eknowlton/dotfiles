@@ -31,6 +31,7 @@ Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
+" Plugin 'hecal3/vim-leader-guide'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -202,3 +203,12 @@ nnoremap <leader>bb :CtrlPBuffer<CR>
 nnoremap <leader>ls :ls<cr>
 nnoremap <leader>bk :bd!<space>
 
+
+" leader guide
+" let g:lmap  = {}
+
+" let g:lmap.f = { 'f': ['CtrlP', 'CtrlP Fuzy File Finder'] }
+
+" call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+"nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+"vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
