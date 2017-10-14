@@ -31,7 +31,7 @@ Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
-" Plugin 'hecal3/vim-leader-guide'
+Plugin 'hecal3/vim-leader-guide'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -102,8 +102,6 @@ let g:syntastic_css_checkers = ['css']
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-
-nmap <Leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_user_command = ['ag %s --files-with-matches -g ""']
 if isdirectory('.git')
@@ -205,10 +203,8 @@ nnoremap <leader>bk :bd!<space>
 
 
 " leader guide
-" let g:lmap  = {}
-
-" let g:lmap.f = { 'f': ['CtrlP', 'CtrlP Fuzy File Finder'] }
-
-" call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-"nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-"vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+ 
+let g:lmap = {}
