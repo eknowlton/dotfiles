@@ -1,6 +1,5 @@
 # ruby stuff
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # add composer to path
 if [ -d "$HOME/.composer/vendor/bin" ]; then
@@ -17,19 +16,8 @@ if [ -d "/usr/local" ]; then
   export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 fi
 
-# add android SDK from extdrnal to path
-if [ -d "/Volumes/external" ]; then
-  export ANDROID_HOME="/Volumes/external/AndroidSDK"
-  export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools/24.0.2"
-fi
-
-if [ -d "/media/storage/android-sdk-linux" ]; then
-  export ANDROID_HOME="/media/storage/android-sdk-linux"
-  export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools/23.0.1"
-fi
-
 # add mvim command
-export VISUAL="mvim -f"
+export VISUAL="vim -f"
 
 # favorite ll command
 alias ll='ls -la'
