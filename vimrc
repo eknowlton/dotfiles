@@ -28,6 +28,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'joonty/vdebug'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'chrisbra/Colorizer'
+Plugin 'majutsushi/tagbar'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-commentary'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -144,6 +147,12 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " vim json
 let g:vim_json_syntax_conceal = 0
+
+" emmet
+let g:user_emmet_leader_key='<Leader>E'
+
+"----- TagBar
+nmap <Leader>tb :TagbarToggle<CR>
 
 " Include Local vimrc
 if filereadable(expand("~/.vimrc.local"))

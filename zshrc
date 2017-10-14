@@ -100,3 +100,7 @@ export PATH="$PATH:$HOME/bin"
 
 # HomeBrew path
 export PATH="/usr/local/sbin:$PATH"
+
+if [ -e "$HOME/.fzf_aliases" ]; then
+	source ~/.fzf_aliases
+fi
