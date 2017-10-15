@@ -92,11 +92,18 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
 
-let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2']
+let g:syntastic_php_checkers = ['php','phpcs --standard=PSR2']
 let g:syntastic_html_checkers = ['html', 'twig', 'css', 'javascript']
 let g:syntastic_css_checkers = ['css']
+
+" Error symbols
+let g:syntastic_error_symbol = "✗"
+let syntastic_style_error_symbol = "✗"
+let g:syntastic_warning_symbol = "∙∙"
+let syntastic_style_warning_symbol = "∙∙"
 
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
