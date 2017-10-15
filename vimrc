@@ -31,7 +31,6 @@ Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
-Plugin 'hecal3/vim-leader-guide'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -80,7 +79,7 @@ inoremap jk <ESC>
 set lazyredraw
 
 " leader-guide
-let g:lmap = {}
+" let g:lmap = {}
 
 nnoremap <Leader>qq :qa<cr>
 nnoremap <Leader>qQ :qa!<cr>
@@ -143,7 +142,6 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:lmap.n = { 'name' : 'NERDTree' }
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " IndentLine
@@ -162,7 +160,6 @@ let g:vim_json_syntax_conceal = 0
 let g:user_emmet_leader_key='<Leader>E'
 
 "----- TagBar
-let g:lmap.t = { 'name': 'TabBar' }
 nmap <Leader>tt :TagbarToggle<CR>
 
 " Include Local vimrc
@@ -172,79 +169,42 @@ endif
 
 " LEADER KEY BINDINGS
 "----- Files
-let g:lmap.f = { 'name' : 'File Menu' }
-
 nnoremap <leader>ff :CtrlP<cr>
-let g:lmap.f.f = ['f', 'File Fuzzy Search']
-
 nnoremap <leader>fs :w<cr>
-let g:lmap.f.s = ['s', 'Save File']
 nnoremap <leader>fS :wa<cr>
-let g:lmap.f.S = ['S', 'Save All Files']
 nnoremap <leader>fx :x<CR>
-let g:lmap.f.x = ['x', 'Kill File Buffer']
 
 "----- Search
-let g:lmap.s = { 'name' : 'Search Menu' }
-
 set nohls
 set ignorecase
 set hlsearch
 set smartcase
 set incsearch
 nnoremap <leader>sh :set hlsearch!<cr>
-let g:lmap.s.h = ['h', 'Highlight Search']
 nnoremap <leader>ss :Ag!<space>
-let g:lmap.s.s = ['s', 'SilverSurfer Search']
 
 "----- Window
-let g:lmap.w = { 'name' : 'Window Menu' }
 autocmd VimResized * :wincmd =
 set splitbelow
 set splitright
 nnoremap <leader>wl <c-w>l
-let g:lmap.w.l = ['l', 'Move Left']
 nnoremap <leader>wh <c-w>h
-let g:lmap.w.h = ['h', 'Move Right']
 nnoremap <leader>wj <c-w>j
-let g:lmap.w.j = ['j', 'Move Down']
 nnoremap <leader>wk <c-w>k
-let g:lmap.w.k = ['k', 'Move Up']
 nnoremap <leader>wL <c-w>>
-let g:lmap.w.L = ['L', 'Decrease Width']
 nnoremap <leader>wH <c-w><
-let g:lmap.w.H = ['H', 'Increase Width']
 nnoremap <leader>wK <c-w>+
-let g:lmap.w.K = ['K', 'Increase Height']
 nnoremap <leader>wJ <c-w>-
-let g:lmap.w.J = ['J', 'Decrease Height']
 nnoremap <leader>wd :q<cr>
-let g:lmap.w.c = ['c', 'Close Window']
 nnoremap <leader>wv :vsp<cr>
-let g:lmap.w.v = ['v', 'Vertical Split']
 nnoremap <leader>wh :sp<cr>
-let g:lmap.w.h = ['h', 'Horizontal Split']
 nnoremap <leader>wo <c-w>o
-let g:lmap.w.o = ['o', 'Only Window']
 
 "----- Buffers
-let g:lmap.b = { 'name' : 'Buffer Menu' }
-
 nnoremap <leader>br :e!<cr>
-let g:lmap.b.r = ['r', 'Reload']
 nnoremap <leader>bd :bd<cr>
-let g:lmap.b.d = ['d', 'Delete Buffer']
 nnoremap <leader>bn :bn<cr>
-let g:lmap.b.n = ['n', 'Next Buffer']
 nnoremap <leader>bp :bp<cr>
-let g:lmap.b.p = ['p', 'Previous Buffer']
 nnoremap <leader>bb :CtrlPBuffer<CR>
-let g:lmap.b.b = ['b', 'CtrlP Buffers']
 nnoremap <leader>bD :bd!<space>
-let g:lmap.b.D = ['D', 'Force Deleted Buffer']
 
-" leader guide
-call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
- 
