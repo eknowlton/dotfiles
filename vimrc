@@ -195,7 +195,7 @@ nnoremap <leader>wK <c-w>+
 nnoremap <leader>wJ <c-w>-
 nnoremap <leader>wd :q<cr>
 nnoremap <leader>wv :vsp<cr>
-nnoremap <leader>wh :sp<cr>
+nnoremap <leader>ws :sp<cr>
 nnoremap <leader>wo <c-w>o
 
 "----- Buffers
