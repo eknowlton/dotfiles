@@ -217,6 +217,8 @@ nnoremap <leader>wv :vsp<cr>
 let g:lmap.w.v = ['v', 'Vertical Split']
 nnoremap <leader>wh :sp<cr>
 let g:lmap.w.h = ['h', 'Horizontal Split']
+nnoremap <leader>wo <c-w>o
+let g:lmap.w.o = ['o', 'Only Window']
 
 "----- Buffers
 let g:lmap.b = { 'name' : 'Buffer Menu' }
