@@ -25,7 +25,6 @@ Plugin 'alvan/vim-closetag'
 Plugin 'yggdroot/indentline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'joonty/vdebug'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
@@ -97,9 +96,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
 
-let g:syntastic_php_checkers = ['php','phpcs --standard=PSR2']
+let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_html_checkers = ['html', 'twig', 'css', 'javascript']
 let g:syntastic_css_checkers = ['css']
+
+let g:syntastic_php_phpcs_args = '--standard=PSR2'
 
 " Error symbols
 let g:syntastic_error_symbol = "✗"
@@ -146,9 +147,6 @@ nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " IndentLine
 "let g:indentLine_setColors = 0
-
-" Vdebug Servers
-let g:vdebug_options = { 'path_maps': { '/home/vagrant/sites': '/Users/ethan/sites'}, 'server': '192.168.10.10' }
 
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']

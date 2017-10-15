@@ -1,5 +1,3 @@
-# ruby stuff
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # add composer to path
 if [ -d "$HOME/.composer/vendor/bin" ]; then
@@ -15,6 +13,9 @@ fi
 if [ -d "/usr/local" ]; then
   export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 fi
+
+# ruby stuff
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # add mvim command
 export VISUAL="vim -f"
