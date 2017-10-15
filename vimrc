@@ -1,5 +1,4 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              " be iMproved, required filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -97,7 +96,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
 
-let g:syntastic_php_checkers = ['php','phpcs']
+let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_html_checkers = ['html', 'twig', 'css', 'javascript']
 let g:syntastic_css_checkers = ['css']
 
@@ -224,7 +223,7 @@ let g:lmap.w.c = ['c', 'Close Window']
 nnoremap <leader>wv :vsp<cr>
 let g:lmap.w.v = ['v', 'Vertical Split']
 nnoremap <leader>wh :sp<cr>
-let g:lmap.w.h = ['h', 'Horizontal Split']
+let g:lmap.w.s = ['h', 'Horizontal Split']
 nnoremap <leader>wo <c-w>o
 let g:lmap.w.o = ['o', 'Only Window']
 
