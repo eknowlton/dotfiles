@@ -30,6 +30,7 @@ Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
+Plugin 'mileszs/ack.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -77,8 +78,12 @@ inoremap jk <ESC>
 " Set lazyredraw, speeds up navigation with syntax on
 set lazyredraw
 
-" leader-guide
-" let g:lmap = {}
+" use silversearcher in Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
+endif
+
+nnoremap <Leader>sa :Ack!<Space>
 
 nnoremap <Leader>qq :qa<cr>
 nnoremap <Leader>qQ :qa!<cr>
