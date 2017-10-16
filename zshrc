@@ -93,3 +93,11 @@ source ~/.bash_profile
 if [ -e "$HOME/.fzf_aliases" ]; then
 	source ~/.fzf_aliases
 fi
+
+if [ -e "$HOME/.rbenv" ]; then
+    eval "$(rbenv init -)"
+fi
+
+alias ll='ls -la'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

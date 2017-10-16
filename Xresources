@@ -1,4 +1,4 @@
-XTerm*faceName: Bitstream Vera Serif Mono
+XTerm*faceName: Powerline
 xterm*faceSize: 9
 xterm*vt100*geometry: 80x60
 xterm*saveLines: 16384

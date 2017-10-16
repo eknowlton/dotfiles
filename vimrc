@@ -23,13 +23,13 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'yggdroot/indentline'
-Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
+Plugin 'mileszs/ack.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -77,8 +77,12 @@ inoremap jk <ESC>
 " Set lazyredraw, speeds up navigation with syntax on
 set lazyredraw
 
-" leader-guide
-" let g:lmap = {}
+" use silversearcher in Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
+endif
+
+nnoremap <Leader>sa :Ack!<Space>
 
 nnoremap <Leader>qq :qa<cr>
 nnoremap <Leader>qQ :qa!<cr>
@@ -136,17 +140,12 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden = 1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-nnoremap <leader>nt :NERDTreeToggle<cr>
-
 " IndentLine
 "let g:indentLine_setColors = 0
+"
+" Fugitive
+" fix issue not getting commands
+autocmd BufWinEnter * if empty(expand('<afile>')) | call fugitive#detect(getcwd()) | endif
 
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -205,4 +204,3 @@ nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bb :CtrlPBuffer<CR>
 nnoremap <leader>bD :bd!<space>
-
