@@ -30,6 +30,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
 Plugin 'mileszs/ack.vim'
+Plugin 'janko-m/vim-test'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -204,3 +205,12 @@ nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bb :CtrlPBuffer<CR>
 nnoremap <leader>bD :bd!<space>
+nnoremap <leader>ls :ls<cr>
+
+"----- Test
+nnoremap <silent> <leader>tt :TestNearest<CR>
+nnoremap <silent> <leader>tT :TestFile<CR>
+nnoremap <silent> <leader>ta :TestSuite<CR>
+nnoremap <silent> <leader>tl :TestLast<CR>
+nnoremap <silent> <leader>tg :TestVisit<CR>
+
