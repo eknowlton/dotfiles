@@ -20,6 +20,7 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'shougo/neocomplete.vim'
+Plugin 'shougo/unite.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'yggdroot/indentline'
@@ -27,12 +28,11 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'chrisbra/Colorizer'
 Plugin 'majutsushi/tagbar'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
 Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'vim-scripts/vim-php-namespace'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -76,6 +76,11 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 inoremap jk <ESC>
+
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Set lazyredraw, speeds up navigation with syntax on
 set lazyredraw
@@ -167,13 +172,8 @@ if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
 
-" PHP Namespace
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <leader>pn <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <leader>pn :call PhpInsertUse()<CR>
+" php namespace use
+nnoremap <leader>Pu :call PhpInsertUser()<CR>
 
 " LEADER KEY BINDINGS
 "----- Files
