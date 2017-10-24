@@ -31,6 +31,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-commentary'
 Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -158,12 +160,20 @@ let g:vim_json_syntax_conceal = 0
 let g:user_emmet_leader_key='<Leader>E'
 
 "----- TagBar
-nmap <Leader>tt :TagbarToggle<CR>
+nmap <Leader>Tt :TagbarToggle<CR>
 
 " Include Local vimrc
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
+
+" PHP Namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <leader>pn <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <leader>pn :call PhpInsertUse()<CR>
 
 " LEADER KEY BINDINGS
 "----- Files
