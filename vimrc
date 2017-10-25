@@ -30,15 +30,19 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
+Plugin 'sirver/ultisnips'
+Plugin 'tobys/vmustache'
 Plugin 'valloric/youcompleteme'
+Plugin 'shougo/vimproc.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'stanangeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'm2mdas/phpcomplete-extended'
 Plugin 'vim-scripts/vim-php-namespace'
-Plugin 'phpactor/phpactor'
+Plugin 'tobyS/pdv'
 Plugin 'othree/html5.vim'
 Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
@@ -77,6 +81,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 inoremap jk <ESC>
+set nowrap
 
 " YouCompleteMe
 let g:ycm_min_num_of_chars_for_completion = 4
@@ -166,6 +171,10 @@ let g:vim_json_syntax_conceal = 0
 
 " emmet
 let g:user_emmet_leader_key='<Leader>E'
+
+" php documentor
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <leader>pd :call pdv#DocumentWithSnip()<CR>
 
 "----- TagBar
 nmap <Leader>Tt :TagbarToggle<CR>
