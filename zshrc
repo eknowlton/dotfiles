@@ -101,3 +101,6 @@ fi
 alias ll='ls -la'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# source local zshrc for unix/linux
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
