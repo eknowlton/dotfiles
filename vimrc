@@ -19,7 +19,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'shougo/neocomplete.vim'
 Plugin 'shougo/unite.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
@@ -31,13 +30,15 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-commentary'
 Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'vim-scripts/vim-php-namespace'
+Plugin 'valloric/youcompleteme'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'stanangeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'vim-scripts/vim-php-namespace'
+Plugin 'phpactor/phpactor'
 Plugin 'othree/html5.vim'
 Plugin 'elzr/vim-json'
 Plugin 'vim-ruby/vim-ruby'
@@ -76,6 +77,12 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 inoremap jk <ESC>
+
+" YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 4
+
+" phpactor
+" autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
@@ -135,10 +142,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
 set laststatus=2
-
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " iTerm2 OSX different cursor for different modes
 "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
