@@ -104,3 +104,7 @@ alias ll='ls -la'
 
 # source local zshrc for unix/linux
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+[ -e /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
+
+alias sudo="sudo -E"
