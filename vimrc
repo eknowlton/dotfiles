@@ -33,14 +33,14 @@ Plugin 'janko-m/vim-test'
 Plugin 'sirver/ultisnips'
 Plugin 'tobys/vmustache'
 Plugin 'valloric/youcompleteme'
-Plugin 'shougo/vimproc.vim'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'joonty/vdebug'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'stanangeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'm2mdas/phpcomplete-extended'
 Plugin 'vim-scripts/vim-php-namespace'
 Plugin 'tobyS/pdv'
 Plugin 'othree/html5.vim'
@@ -85,9 +85,6 @@ set nowrap
 
 " YouCompleteMe
 let g:ycm_min_num_of_chars_for_completion = 4
-
-" phpactor
-" autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
@@ -179,15 +176,17 @@ nnoremap <leader>pd :call pdv#DocumentWithSnip()<CR>
 "----- TagBar
 nmap <Leader>Tt :TagbarToggle<CR>
 
-" Include Local vimrc
-if filereadable(expand("~/.vimrc.local"))
-	source ~/.vimrc.local
-endif
-
 " php namespace use
-nnoremap <leader>Pu :call PhpInsertUser()<CR>
+nnoremap <leader>Pu :call PhpInsertUse()<CR>
+
+" vdebug
+let g:vdebug_options = {}
+let g:vdebug_options['break_on_open'] = 0
+let g:vdebug_options['port'] = 9000
+let g:vdebug_options['server'] = ''
 
 " LEADER KEY BINDINGS
+
 "----- Files
 nnoremap <leader>ff :CtrlP<cr>
 nnoremap <leader>fs :w<cr>
@@ -235,4 +234,9 @@ nnoremap <silent> <leader>tT :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
 nnoremap <silent> <leader>tg :TestVisit<CR>
+
+" Include Local vimrc
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
 
