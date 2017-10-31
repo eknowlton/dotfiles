@@ -1,0 +1,3 @@
+myclif() {
+    mycli --defaults-file=$1
+}
