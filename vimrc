@@ -32,9 +32,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'sirver/ultisnips'
 Plugin 'tobys/vmustache'
-Plugin 'valloric/youcompleteme'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'joonty/vdebug'
+Plugin 'ervandew/supertab'
+Plugin 'thaerkh/vim-workspace'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -50,6 +51,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-ragtag'
 Plugin 'ekalinin/dockerfile.vim'
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,9 +84,6 @@ set softtabstop=4
 set expandtab
 inoremap jk <ESC>
 set nowrap
-
-" YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 4
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
@@ -169,6 +168,8 @@ let g:vim_json_syntax_conceal = 0
 " emmet
 let g:user_emmet_leader_key='<Leader>E'
 
+nnoremap <leader>Ws :ToggleWorkspace<CR>
+
 " php documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <leader>pd :call pdv#DocumentWithSnip()<CR>
@@ -177,7 +178,7 @@ nnoremap <leader>pd :call pdv#DocumentWithSnip()<CR>
 nmap <Leader>Tt :TagbarToggle<CR>
 
 " php namespace use
-nnoremap <leader>Pu :call PhpInsertUse()<CR>
+nnoremap <leader>pu :call PhpInsertUse()<CR>
 
 " vdebug
 let g:vdebug_options = {}
