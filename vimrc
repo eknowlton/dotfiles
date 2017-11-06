@@ -36,6 +36,7 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'joonty/vdebug'
 Plugin 'ervandew/supertab'
 Plugin 'thaerkh/vim-workspace'
+Plugin 'francoiscabrol/ranger.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -52,6 +53,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-ragtag'
 Plugin 'ekalinin/dockerfile.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'cakebaker/scss-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,6 +99,8 @@ set lazyredraw
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
 endif
+
+nnoremap <leader>fR :Ranger<cr>
 
 nnoremap <Leader>sa :Ack!<Space>
 
