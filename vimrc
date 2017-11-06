@@ -18,7 +18,6 @@ Plugin 'ntpeters/vim-airline-colornum'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-surround'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'shougo/unite.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
@@ -32,11 +31,11 @@ Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'sirver/ultisnips'
 Plugin 'tobys/vmustache'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'joonty/vdebug'
 Plugin 'ervandew/supertab'
 Plugin 'thaerkh/vim-workspace'
 Plugin 'francoiscabrol/ranger.vim'
+Plugin 'hecal3/vim-leader-guide'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -100,13 +99,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
 endif
 
-nnoremap <leader>fR :Ranger<cr>
-
-nnoremap <Leader>sa :Ack!<Space>
-
-nnoremap <Leader>qq :qa<cr>
-nnoremap <Leader>qQ :qa!<cr>
-
 " Syntastic Default Settings
 " https://github.com/vim-syntastic/syntastic#settings
 
@@ -169,20 +161,11 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " vim json
 let g:vim_json_syntax_conceal = 0
 
-" emmet
-let g:user_emmet_leader_key='<Leader>E'
-
-nnoremap <leader>Ws :ToggleWorkspace<CR>
+" vim gitgutter
+let g:gitgutter_map_keys = 0
 
 " php documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <leader>pd :call pdv#DocumentWithSnip()<CR>
-
-"----- TagBar
-nmap <Leader>Tt :TagbarToggle<CR>
-
-" php namespace use
-nnoremap <leader>pu :call PhpInsertUse()<CR>
 
 " vdebug
 let g:vdebug_options = {}
@@ -191,12 +174,34 @@ let g:vdebug_options['port'] = 9000
 let g:vdebug_options['server'] = ''
 
 " LEADER KEY BINDINGS
+call leaderGuide#register_prefix_descriptions("<space>", "g:lmap")
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<space>'<cr>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<space>'<cr>
+
+let g:lmap = {}
+
+"----- Workspace
+let g:lmap.p = { 'name' : '+ Project',
+			   \ 'w': { 'name' : '+ Workspace', 't' : ['ToggleWorkspace', 'Toggle Workspace'] },
+			   \}
+"----- Language
+let g:lmap.l = { 'name' : '+ Language',
+			   \ 't' : ['TagbarToggle', 'Tagbar'],
+			   \ 'd' : ['call pdv#DocumentWithSnip()', 'Generate Docblock'],
+			   \ 'u' : ['call PhpInsertUse()', 'Generate Use Statement'],
+			   \}
+
+"----- Ranger
+let g:ranger_map_keys = 0
 
 "----- Files
-nnoremap <leader>ff :CtrlP<cr>
-nnoremap <leader>fs :w<cr>
-nnoremap <leader>fS :wa<cr>
-nnoremap <leader>fx :x<CR>
+let g:lmap.f = { 'name' : '+ Files',
+			 \ 'f' : ['CtrlP', 'Find Files (CtrlP)'],
+			 \ 'r' : ['Ranger', 'Find Files (Ranger)'],
+			 \ 's' : ['w', 'Save File'],
+			 \ 'S' : ['wa', 'Save All Files'],
+			 \ 'x' : ['x', 'Save & Close'],
+			 \}
 
 "----- Search
 set nohls
@@ -204,41 +209,63 @@ set ignorecase
 set hlsearch
 set smartcase
 set incsearch
-nnoremap <leader>sh :set hlsearch!<cr>
-nnoremap <leader>ss :Ag!<space>
+nnoremap <Leader>/a :Ack!
+let g:lmap['/'] = { 'name' : '+ Find In Project',
+				  \ 'h' : ['set hlsearch!', 'Hightlight Search'],
+				  \}
 
 "----- Window
 autocmd VimResized * :wincmd =
 set splitbelow
 set splitright
-nnoremap <leader>wl <c-w>l
-nnoremap <leader>wh <c-w>h
-nnoremap <leader>wj <c-w>j
-nnoremap <leader>wk <c-w>k
-nnoremap <leader>wL <c-w>>
-nnoremap <leader>wH <c-w><
-nnoremap <leader>wK <c-w>+
-nnoremap <leader>wJ <c-w>-
-nnoremap <leader>wd :q<cr>
-nnoremap <leader>wv :vsp<cr>
-nnoremap <leader>ws :sp<cr>
-nnoremap <leader>wo <c-w>o
+let g:lmap.w = { 'name' : '+ Windows',
+			   \ 'd': ['close', 'Close Window'],
+			   \ 's': ['split', 'Horizontal Split'],
+			   \ 'v': ['vsplit', 'Vertical Split'],
+			   \ 'h': ['wincmd h', 'Move Left'],
+			   \ 'l': ['wincmd l', 'Move Right'],
+			   \ 'j': ['wincmd j', 'Move Down'],
+			   \ 'k': ['wincmd k', 'Move Up'],
+			   \ 'o': ['wincmd o', 'Close Others'],
+			   \ '=': ['wincmd =', 'Resize Equally'],
+			   \}
 
-"----- Buffers
-nnoremap <leader>br :e!<cr>
-nnoremap <leader>bd :bd<cr>
-nnoremap <leader>bn :bn<cr>
-nnoremap <leader>bp :bp<cr>
-nnoremap <leader>bb :CtrlPBuffer<CR>
-nnoremap <leader>bD :bd!<space>
-nnoremap <leader>ls :ls<cr>
+" Buffer
+let g:lmap.b = { 'name' : '+ Buffer',
+               \ 'b' : [':CtrlPBuffer', 'Switch Buffers'],
+               \ 'd' : ['bd', 'Delete Buffer'],
+               \ 'l' : ['ls', 'List Buffers'],
+               \ 'n' : ['bn', 'Next Buffer'],
+               \ 'p' : ['bp', 'Previous Buffer'],
+               \}
+
+" Git
+nnoremap <leader>gg :Git<space>
+let g:lmap.g = { 'name' : '+ Git',
+               \ 'a' : ['Gwrite', 'Git Add File'],
+               \ 'b' : ['Gblame', 'Git Blame'],
+               \ 'c' : ['Gcommit', 'Git Commit'],
+               \ 'd' : ['Gdiff', 'Git Diff'],
+               \ 'f' : ['Gfetch', 'Git Fetch'],
+               \ 'F' : ['Gpull', 'Git Pull'],
+               \ 'P' : ['Gpush', 'Git Push'],
+               \ 'r' : ['Gread', 'Git Reset File'],
+               \ 's' : ['Gstatus', 'Git Status'],
+               \}
 
 "----- Test
-nnoremap <silent> <leader>tt :TestNearest<CR>
-nnoremap <silent> <leader>tT :TestFile<CR>
-nnoremap <silent> <leader>ta :TestSuite<CR>
-nnoremap <silent> <leader>tl :TestLast<CR>
-nnoremap <silent> <leader>tg :TestVisit<CR>
+let g:lmap.t = { 'name' : '+ Testing',
+			   \ 't' : ['TestNearest', 'Test to Cursor'],
+			   \ 'f' : ['TestFile', 'Run Test File'],
+			   \ 'a' : ['TestSuite', 'Run All Tests'],
+			   \ 'l' : ['TestLast', 'Run Last Test'],
+			   \}
+
+" Quit
+let g:lmap.q = { 'name' : '+ Quit',
+               \ 'q' : ['qa', 'Quit All'],
+               \ 'Q' : ['qa!', 'Force Quit All'],
+               \}
 
 " Include Local vimrc
 if filereadable(expand("~/.vimrc.local"))
