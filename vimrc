@@ -181,7 +181,7 @@ let g:lmap = {}
 
 "----- Workspace
 let g:lmap.p = { 'name' : '+ Project',
-			   \ 'w': { 'name' : '+ Workspace', 's' : ['ToggleWorkspace', 'Save Workspace'] },
+			   \ 'w': { 'name' : '+ Workspace', 't' : ['ToggleWorkspace', 'Toggle Workspace'] },
 			   \}
 "----- Language
 let g:lmap.l = { 'name' : '+ Language',
@@ -254,10 +254,10 @@ let g:lmap.g = { 'name' : '+ Git',
 
 "----- Test
 let g:lmap.t = { 'name' : '+ Testing',
-			   \ 't' : 'Test to Cursor',
-			   \ 'f' : 'Run Test File',
-			   \ 'a' : 'Run All Tests',
-			   \ 'l' : 'Run Last Test',
+			   \ 't' : ['TestNearest', 'Test to Cursor'],
+			   \ 'f' : ['TestFile', 'Run Test File'],
+			   \ 'a' : ['TestSuite', 'Run All Tests'],
+			   \ 'l' : ['TestLast', 'Run Last Test'],
 			   \}
 
 " Quit
