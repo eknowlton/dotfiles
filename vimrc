@@ -91,7 +91,7 @@ set nowrap
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Set lazyredraw, speeds up navigation with syntax on
-set lazyredraw
+"set lazyredraw
 
 " use silversearcher in Ack
 if executable('ag')
