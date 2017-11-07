@@ -37,6 +37,8 @@ Plugin 'thaerkh/vim-workspace'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'hecal3/vim-leader-guide'
 Plugin 'Shougo/deoplete.nvim'
+Plugin 'szw/vim-tags'
+Plugin 'tmhedberg/matchit'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -78,6 +80,9 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" vim tags
+let g:vim_tags_auto_generate = 1
 
 syntax on
 set number
@@ -195,9 +200,10 @@ let g:lmap.p = { 'name' : '+ Project',
 			   \}
 "----- Language
 let g:lmap.l = { 'name' : '+ Language',
-			   \ 't' : ['TagbarToggle', 'Tagbar'],
+			   \ 'T' : ['TagbarToggle', 'Tagbar'],
 			   \ 'd' : ['call pdv#DocumentWithSnip()', 'Generate Docblock'],
 			   \ 'u' : ['call PhpInsertUse()', 'Generate Use Statement'],
+			   \ 't' : ['TagsGenerate!', 'Generate Tags'],
 			   \}
 
 "----- Ranger
@@ -269,6 +275,10 @@ let g:lmap.t = { 'name' : '+ Testing',
 			   \ 'a' : ['TestSuite', 'Run All Tests'],
 			   \ 'l' : ['TestLast', 'Run Last Test'],
 			   \}
+"---- Options
+let g:lmap.o = { 'name' : '+ Options',
+			   \ 's' : ['set spell!', 'Enable Spellcheck']
+			   \}
 
 " Quit
 let g:lmap.q = { 'name' : '+ Quit',
@@ -277,7 +287,7 @@ let g:lmap.q = { 'name' : '+ Quit',
                \}
 
 " Include Local vimrc
-if filereadable(expand(".vimrc.local"))
-	source .vimrc.local
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
 endif
 
