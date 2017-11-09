@@ -37,7 +37,6 @@ Plugin 'thaerkh/vim-workspace'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'hecal3/vim-leader-guide'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'szw/vim-tags'
 Plugin 'tmhedberg/matchit'
 
 " Language Specific
@@ -75,19 +74,24 @@ filetype plugin indent on    " required
 " VIM Settings
 
 " python bin
-let g:python2_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+"let g:python2_host_prog = '/usr/local/bin/python'
+"let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 
 " vim tags
 let g:vim_tags_auto_generate = 1
+let g:vim_tags_ignore_files = []
+
+set undofile
 
 syntax on
 set number
 set relativenumber
 colorscheme brogrammer
+hi NonText ctermbg=none 
+hi Normal guibg=NONE ctermbg=NONE
 let mapleader=" "
 set cursorline
 set modifiable
@@ -208,6 +212,7 @@ let g:lmap.l = { 'name' : '+ Language',
 
 "----- Ranger
 let g:ranger_map_keys = 0
+let g:ranger_replace_netrw = 1
 
 "----- Files
 let g:lmap.f = { 'name' : '+ Files',
@@ -245,6 +250,14 @@ let g:lmap.w = { 'name' : '+ Windows',
 			   \ '=': ['wincmd =', 'Resize Equally'],
 			   \}
 
+let g:lmap.t = { 'name' : '+ Tabs',
+			   \ 'n' : ['tabedit', 'Open New Tab'],
+			   \ 'j' : ['tabn', 'Next Tab'],
+			   \ 'k' : ['tabp', 'Previous Tab'],
+			   \ 'd' : ['tabclose', 'Close Tab'],
+			   \ 'o' : ['tabonly', 'Close All Other Tabs'],
+			   \}
+
 " Buffer
 let g:lmap.b = { 'name' : '+ Buffer',
                \ 'b' : [':CtrlPBuffer', 'Switch Buffers'],
@@ -252,6 +265,8 @@ let g:lmap.b = { 'name' : '+ Buffer',
                \ 'l' : ['ls', 'List Buffers'],
                \ 'n' : ['bn', 'Next Buffer'],
                \ 'p' : ['bp', 'Previous Buffer'],
+               \ 'r' : ['e', 'Reload Buffer'],
+               \ 'D' : ['bufdo bd', 'Kill All Buffers'],
                \}
 
 " Git
@@ -269,7 +284,7 @@ let g:lmap.g = { 'name' : '+ Git',
                \}
 
 "----- Test
-let g:lmap.t = { 'name' : '+ Testing',
+let g:lmap.T = { 'name' : '+ Testing',
 			   \ 't' : ['TestNearest', 'Test to Cursor'],
 			   \ 'f' : ['TestFile', 'Run Test File'],
 			   \ 'a' : ['TestSuite', 'Run All Tests'],
