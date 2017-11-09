@@ -90,8 +90,6 @@ syntax on
 set number
 set relativenumber
 colorscheme brogrammer
-hi NonText ctermbg=none 
-hi Normal guibg=NONE ctermbg=NONE
 let mapleader=" "
 set cursorline
 set modifiable
