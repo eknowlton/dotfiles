@@ -37,6 +37,7 @@ Plugin 'thaerkh/vim-workspace'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'hecal3/vim-leader-guide'
 Plugin 'Shougo/deoplete.nvim'
+Plugin 'rbgrouleff/bclose.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -73,8 +74,8 @@ filetype plugin indent on    " required
 " VIM Settings
 
 " python bin
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python2_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
