@@ -31,13 +31,12 @@ Plugin 'mileszs/ack.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'sirver/ultisnips'
 Plugin 'tobys/vmustache'
-Plugin 'joonty/vdebug'
-Plugin 'ervandew/supertab'
-Plugin 'thaerkh/vim-workspace'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'hecal3/vim-leader-guide'
-Plugin 'Shougo/deoplete.nvim'
 Plugin 'tmhedberg/matchit'
+Plugin 'kassio/neoterm'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'lvht/phpcd.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -79,6 +78,10 @@ filetype plugin indent on    " required
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" phpcd
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
 " vim tags
 let g:vim_tags_auto_generate = 1
@@ -196,6 +199,30 @@ vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<space>'<cr>
 
 let g:lmap = {}
 
+"----- Terminal
+tnoremap <esc> <c-\><c-n>
+command! ShellSend call feedkeys(':!<space>', 't')
+command! TermSend call feedkeys(':T<space>', 't')
+command! TermClose call feedkeys(':Tclose', 't')
+command! TermKill call feedkeys(':Tkill', 't')
+command! TermClear call feedkeys(':Tclear', 't')
+command! TermOpen call feedkeys(':Topen', 't')
+command! TermFocus Topen | wincmd b | call feedkeys('i', 't')
+command! TermKillWindow Topen | wincmd b | close
+let g:lmap.t = { 'name' : '+Terminal',
+               \ 'c' : ['TermClose', 'Close Terminal(n)'],
+               \ 'h' : ['Ttoggle', 'Toggle Terminal'],
+               \ 'i' : ['TermFocus', 'Terminal Focus'],
+               \ 'k' : ['TermKill', 'Kill Process'],
+               \ 'l' : ['TermClear', 'Clear Terminal'],
+               \ 'n' : ['Tnew', 'New Terminal'],
+               \ 'o' : ['TermOpen', 'Open Terminal'],
+               \ 's' : ['ShellSend', 'Shell Send'],
+               \ 't' : ['TermSend', 'Terminal Send'],
+               \ 'w' : ['TermKillWindow', 'Kill Process Window'],
+               \}
+
+
 "----- Workspace
 let g:lmap.p = { 'name' : '+ Project',
 			   \ 'w': { 'name' : '+ Workspace', 't' : ['ToggleWorkspace', 'Toggle Workspace'] },
@@ -248,7 +275,7 @@ let g:lmap.w = { 'name' : '+ Windows',
 			   \ '=': ['wincmd =', 'Resize Equally'],
 			   \}
 
-let g:lmap.t = { 'name' : '+ Tabs',
+let g:lmap.w.t = { 'name' : '+ Tabs',
 			   \ 'n' : ['tabedit', 'Open New Tab'],
 			   \ 'j' : ['tabn', 'Next Tab'],
 			   \ 'k' : ['tabp', 'Previous Tab'],
