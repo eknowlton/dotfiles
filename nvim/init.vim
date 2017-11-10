@@ -35,8 +35,8 @@ Plugin 'francoiscabrol/ranger.vim'
 Plugin 'hecal3/vim-leader-guide'
 Plugin 'tmhedberg/matchit'
 Plugin 'kassio/neoterm'
+Plugin 'ervandew/supertab'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'lvht/phpcd.vim'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
@@ -81,7 +81,7 @@ let g:deoplete#enable_at_startup = 1
 
 " phpcd
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
+let g:deoplete#ignore_sources = ['phpcd']
 
 " vim tags
 let g:vim_tags_auto_generate = 1
