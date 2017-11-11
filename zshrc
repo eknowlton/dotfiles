@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow docker git-extras laravel4 laravel5 bundler composer common-aliases ng)
+plugins=(git git-flow docker git-extras laravel4 laravel5 bundler composer common-aliases ng vi-mode)
 
 # User configuration
 
