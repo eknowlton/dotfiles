@@ -6,11 +6,15 @@ set cursorline
 set autoindent
 set expandtab
 set tabstop=4
+set shiftwidth=4
 set softtabstop=4
 set nowrap
+set undofile
 
 inoremap jk <ESC>
 
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving

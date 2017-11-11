@@ -21,6 +21,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'hecal3/vim-leader-guide'
 Plug 'shougo/deoplete.nvim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
