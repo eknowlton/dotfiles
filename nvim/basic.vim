@@ -3,7 +3,7 @@ colorscheme brogrammer
 set number
 set relativenumber
 set cursorline
-set autoindent
+set smartindent 
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -12,6 +12,9 @@ set nowrap
 set undofile
 
 inoremap jk <ESC>
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
