@@ -52,6 +52,7 @@ let g:lmap.w = { 'name' : '+ Windows',
 " Buffer
 let g:lmap.b = { 'name' : '+ Buffer',
                \ 'b' : [':CtrlPBuffer', 'Switch Buffers'],
+               \ 'r' : ['e', 'Reload Buffer'],
                \ 'd' : ['bd', 'Delete Buffer'],
                \ 'l' : ['ls', 'List Buffers'],
                \ 'n' : ['bn', 'Next Buffer'],

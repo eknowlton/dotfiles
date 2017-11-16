@@ -33,6 +33,7 @@ Plug 'othree/html5.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 
 " Initialize plugin system
 call plug#end()

@@ -1,9 +1,10 @@
+filetype plugin indent on
 colorscheme brogrammer
 
 set number
 set relativenumber
 set cursorline
-set smartindent 
+set autoindent 
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -13,11 +14,10 @@ set undofile
 
 inoremap jk <ESC>
 
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
