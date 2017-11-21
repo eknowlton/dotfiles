@@ -70,6 +70,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
 set laststatus=2
+let g:airline#extensions#tabline#show_splits = 1 "enable/disable displaying open splits per tab (only when tabs are opened). >
+let g:airline#extensions#tabline#show_buffers = 1 " enable/disable displaying buffers with a single tab
+let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 
 " closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
