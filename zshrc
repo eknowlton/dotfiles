@@ -109,3 +109,9 @@ alias ll='ls -la'
 [ -e /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
 
 alias vim='nvim'
+
+if [ -d $HOME/.aliases  ]; then
+    for file in $HOME/.aliases; do
+        source file
+    done
+fi
