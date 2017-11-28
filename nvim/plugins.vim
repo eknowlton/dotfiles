@@ -24,6 +24,8 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
