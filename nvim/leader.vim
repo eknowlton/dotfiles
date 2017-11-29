@@ -80,13 +80,6 @@ let g:lmap.g = { 'name' : '+ Git',
                \ 's' : ['Gstatus', 'Git Status'],
                \ }
 
-" Snippets
-let g:lmap.s = { 'name' : '+ Snippets',
-			   \ 'e' : ['call UltiSnips#ExpandSnippet', 'Expand Snippet'],
-			   \ 'f' : ['call UltiSnips#JumpForwards', 'Jump Forwards'],
-			   \ 'b' : ['call UltiSnips#JumpBackwards', 'Jump Backwards']
-			   \ }
-
 " Quit
 let g:lmap.q = { 'name' : '+ Quit',
                \ 'q' : ['qa', 'Quit All'],

@@ -15,6 +15,8 @@ set undofile
 inoremap jk <ESC>
 
 " Use deoplete
+call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
@@ -91,3 +93,8 @@ let g:gitgutter_map_keys = 0
 
 " PDV
 let g:pdv_template_dir = $HOME . "/.config/nvim/plugged/pdv/templates_snip"
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
