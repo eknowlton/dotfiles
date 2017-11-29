@@ -89,3 +89,5 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " vim gitgutter
 let g:gitgutter_map_keys = 0
 
+" PDV
+let g:pdv_template_dir = $HOME . "/.config/nvim/plugged/pdv/templates_snip"

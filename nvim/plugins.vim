@@ -26,6 +26,12 @@ Plug 'Shougo/denite.nvim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'

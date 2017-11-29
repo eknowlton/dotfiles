@@ -10,7 +10,10 @@ let g:lmap = {}
 "----- Language
 let g:lmap.l = { 'name' : '+ Language',
 			   \ 't' : ['TagbarToggle', 'Tagbar'],
-			   \}
+			   \ 'p' : { 'name' : ' + PHP',
+					   \ 'd' : ['call pdv#DocumentWithSnip()', 'Document Current Line']
+					   \ }
+			   \ }
 
 "----- Ranger
 let g:ranger_map_keys = 0
@@ -28,9 +31,11 @@ let g:lmap.f = { 'name' : '+ Files',
 set ignorecase
 set smartcase
 set incsearch
-nnoremap <Leader>/a :Ack!
+nnoremap <Leader>/A :Ack!
+nnoremap <Leader>/a :Ag
 let g:lmap['/'] = { 'name' : '+ Find In Project',
                   \ 'h' : ['set hlsearch!', 'Hightlight Search'],
+				  \ 'l' : ['FZFLines', 'Search Lines in Open Buffers (FZF)']
 		    	  \ }
 
 "----- Window
@@ -74,6 +79,13 @@ let g:lmap.g = { 'name' : '+ Git',
                \ 'r' : ['Gread', 'Git Reset File'],
                \ 's' : ['Gstatus', 'Git Status'],
                \ }
+
+" Snippets
+let g:lmap.s = { 'name' : '+ Snippets',
+			   \ 'e' : ['call UltiSnips#ExpandSnippet', 'Expand Snippet'],
+			   \ 'f' : ['call UltiSnips#JumpForwards', 'Jump Forwards'],
+			   \ 'b' : ['call UltiSnips#JumpBackwards', 'Jump Backwards']
+			   \ }
 
 " Quit
 let g:lmap.q = { 'name' : '+ Quit',
