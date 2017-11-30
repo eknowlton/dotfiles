@@ -98,3 +98,18 @@ let g:pdv_template_dir = $HOME . "/.config/nvim/plugged/pdv/templates_snip"
 let g:UltiSnipsExpandTrigger="<c-s>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Tests
+let test#strategy = {
+	\ 'nearest': 'neovim',
+	\ 'file': 'neovim',
+	\ 'suite': 'neovim'
+\ }
+
+function! VagrantTransform(cmd) abort
+  let vagrant_project = get(matchlist(readfile('Vagrantfile'), '\vconfig\.vm.synced_folder ["''].+[''"], ["'']([^,"'']+)[''"]'), 1)
+  return 'vagrant ssh --command '.shellescape('cd '.vagrant_project.'; '.a:cmd)
+endfunction
+
+let g:test#custom_transformations = {'vagrant': function('VagrantTransform')}
+let g:test#transformation = 'vagrant'
