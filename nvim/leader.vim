@@ -80,6 +80,14 @@ let g:lmap.g = { 'name' : '+ Git',
                \ 's' : ['Gstatus', 'Git Status'],
                \ }
 
+" Test 
+let g:lmap.t = { 'name' : '+ Testing',
+               \ 't' : ['TestNearest', 'Test Nearest'],
+               \ 'f' : ['TestFile', 'Test File'],
+               \ 'a' : ['TestSuite', 'Test Suite'],
+               \ 'l' : ['TestLast', 'Test Last'],
+               \ 'g' : ['TestVisit', 'Visit Last Test File'],
+               \ }
 " Quit
 let g:lmap.q = { 'name' : '+ Quit',
                \ 'q' : ['qa', 'Quit All'],
