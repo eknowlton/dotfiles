@@ -24,6 +24,7 @@ call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
+let g:deoplete#auto_complete_start_length = 3
 
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 
