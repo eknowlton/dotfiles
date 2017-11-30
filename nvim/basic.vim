@@ -14,6 +14,10 @@ set undofile
 
 inoremap jk <ESC>
 
+" use tab to backward cycle
+inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+
 " Use deoplete
 call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 
