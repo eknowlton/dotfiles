@@ -36,6 +36,7 @@ Plug 'janko-m/vim-test'
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'chase/vim-ansible-yaml'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
 Plug 'ekalinin/dockerfile.vim'
