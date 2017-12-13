@@ -32,6 +32,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'janko-m/vim-test'
+Plug 'mattn/emmet-vim'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
@@ -43,6 +44,7 @@ Plug 'ekalinin/dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'vim-php/tagbar-phpctags.vim'
 
 " Initialize plugin system
 call plug#end()

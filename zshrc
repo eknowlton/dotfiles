@@ -110,6 +110,10 @@ alias ll='ls -la'
 
 alias vim='nvim'
 
+if [ -d $HOME/bin ]; then
+    export PATH="$PATH:$HOME/bin"
+fi
+
 if [ -d $HOME/.aliases  ]; then
     for file in $HOME/.aliases; do
         source file
