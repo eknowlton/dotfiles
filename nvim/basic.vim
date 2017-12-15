@@ -25,7 +25,7 @@ call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
-let g:deoplete#auto_complete_start_length = 3
+let g:deoplete#auto_complete_start_length = 2
 
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 
@@ -119,3 +119,6 @@ endfunction
 
 let g:test#custom_transformations = {'vagrant': function('VagrantTransform')}
 let g:test#transformation = 'vagrant'
+
+" deoplete-go
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
