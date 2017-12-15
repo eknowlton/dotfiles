@@ -7,6 +7,12 @@ vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<space>'<cr>
 
 let g:lmap = {}
 
+"----- Task List
+nnoremap <leader>Tt <Plug>TaskList
+let g:lmap.T = { 'name' : 'Task List',
+			   \ 't' : ['TaskList', 'List All Tasks']
+			   \ }
+
 "----- Language
 let g:lmap.l = { 'name' : '+ Language',
 			   \ 't' : ['TagbarToggle', 'Tagbar'],
