@@ -49,6 +49,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'vim-php/tagbar-phpctags.vim'
 
 " Initialize plugin system
 call plug#end()
