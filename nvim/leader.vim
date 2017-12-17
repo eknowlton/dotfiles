@@ -18,7 +18,14 @@ let g:lmap.l = { 'name' : '+ Language',
 			   \ 't' : ['TagbarToggle', 'Tagbar'],
 			   \ 'p' : { 'name' : ' + PHP',
 					   \ 'd' : ['call pdv#DocumentWithSnip()', 'Document Current Line']
-					   \ }
+					   \ },
+			   \ 'g' : { 'name' : ' + GO',
+					   \ 'b' : ['GoBuild', 'Build'],
+					   \ 'r' : ['GoRun', 'Run'],
+					   \ },
+               \ 'N' : ['cnext', 'Quickfix Next'],
+               \ 'P' : ['cprevious', 'Quickfix Previous'],
+               \ 'D' : ['cclose', 'Quickfix Close']
 			   \ }
 
 "----- Ranger
