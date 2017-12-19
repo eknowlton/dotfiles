@@ -35,6 +35,7 @@ Plug 'janko-m/vim-test'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/python-client'
 Plug 'vim-scripts/TaskList.vim'
+Plug 'terryma/vim-smooth-scroll'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
