@@ -122,6 +122,7 @@ let g:test#transformation = 'vagrant'
 
 " deoplete-go
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#gocode_binary = $GOPATH .'/bin/gocode'
 
 " Smooth Scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
