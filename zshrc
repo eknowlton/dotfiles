@@ -124,3 +124,7 @@ if [ -d $HOME/go  ]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
 fi
+
+if [ -d $HOME/.cabal/bin ]; then
+    export PATH=$PATH:$HOME/.cabal/bin
+fi

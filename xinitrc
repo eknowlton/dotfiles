@@ -1,4 +1,7 @@
-# start xmonad session
+#!/bin/bash
+
+export PATH=$PATH:$HOME/.cabal/bin
+
 exec xmonad
 
 # set background image
