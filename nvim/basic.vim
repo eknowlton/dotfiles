@@ -124,3 +124,5 @@ let g:test#transformation = 'vagrant'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#gocode_binary = $GOPATH .'/bin/gocode'
 
+" vim go
+let g:go_fmt_command = "goimports"
