@@ -128,3 +128,7 @@ fi
 if [ -d $HOME/.cabal/bin ]; then
     export PATH=$PATH:$HOME/.cabal/bin
 fi
+
+alias ctags="`brew --prefix`/bin/ctags"
+
+alias phpunit="./vendor/bin/phpunit"
