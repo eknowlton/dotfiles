@@ -36,6 +36,7 @@ Plug 'mattn/emmet-vim'
 Plug 'neovim/python-client'
 Plug 'vim-scripts/TaskList.vim'
 Plug 'mklabs/split-term.vim'
+Plug 'Yggdroot/indentLine'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
@@ -51,6 +52,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fishbullet/deoplete-ruby'
+Plug 'uplus/deoplete-solargraph'
 
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'vim-php/tagbar-phpctags.vim'

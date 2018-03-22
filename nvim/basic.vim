@@ -24,7 +24,7 @@ call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
+let g:deoplete#ignore_sources = ['omni']
 "let g:deoplete#auto_complete_start_length = 3
 
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
@@ -79,9 +79,12 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
+
 set laststatus=2
-let g:airline#extensions#tabline#show_splits = 1 "enable/disable displaying open splits per tab (only when tabs are opened). >
+
+let g:airline#extensions#tabline#show_splits = 0 "enable/disable displaying open splits per tab (only when tabs are opened). >
 let g:airline#extensions#tabline#show_buffers = 1 " enable/disable displaying buffers with a single tab
+let g:airline#extensions#tabline#show_tabs = 1 " enable/disable displaying tabs
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 
 " closetag
@@ -127,3 +130,9 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH .'/bin/gocode'
 " vim go
 let g:go_fmt_command = "goimports"
 
+" ruby
+:autocmd Filetype ruby set softtabstop=2
+:autocmd Filetype ruby set sw=2
+:autocmd Filetype ruby set ts=2
+
+let g:indentLine_enabled = 0
