@@ -11,7 +11,7 @@ set shiftwidth=4
 set softtabstop=4
 set nowrap
 set undofile
-set autochdir
+"set autochdir
 
 inoremap jk <ESC>
 
@@ -118,7 +118,7 @@ function! VagrantTransform(cmd) abort
 endfunction
 
 let g:test#custom_transformations = {'vagrant': function('VagrantTransform')}
-let g:test#transformation = 'vagrant'
+"let g:test#transformation = 'vagrant'
 
 " deoplete-go
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
@@ -126,3 +126,4 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH .'/bin/gocode'
 
 " vim go
 let g:go_fmt_command = "goimports"
+
