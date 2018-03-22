@@ -136,3 +136,11 @@ let g:go_fmt_command = "goimports"
 :autocmd Filetype ruby set ts=2
 
 let g:indentLine_enabled = 0
+
+" PHP use statements
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>

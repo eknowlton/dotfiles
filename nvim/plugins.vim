@@ -23,6 +23,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'arnaud-lb/vim-php-namespace'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tobyS/vmustache'
