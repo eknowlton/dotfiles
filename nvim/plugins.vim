@@ -44,6 +44,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'chase/vim-ansible-yaml'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/html5.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'leafgarland/typescript-vim'

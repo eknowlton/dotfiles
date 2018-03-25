@@ -130,7 +130,12 @@ if [ -d $HOME/.cabal/bin ]; then
 fi
 
 if hash brew 2>/dev/null; then
+
     alias ctags="`brew --prefix`/bin/ctags"
+
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+
 fi
 
 
