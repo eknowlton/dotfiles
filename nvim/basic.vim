@@ -53,6 +53,7 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_html_checkers = ['html', 'twig', 'css', 'javascript']
 let g:syntastic_css_checkers = ['css']
+"let g:syntastic_ruby_checkers = ['rubocop']
 
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 
@@ -152,3 +153,6 @@ function! IPhpInsertUse()
 endfunction
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" set all yaml files to ansible file type for hightlighting and indents
+au BufRead,BufNewFile *.yml set filetype=ansible
