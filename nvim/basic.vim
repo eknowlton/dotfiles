@@ -113,7 +113,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let test#strategy = {
 	\ 'nearest': 'neovim',
 	\ 'file': 'neovim',
-	\ 'suite': 'neovim'
+	\ 'suite': 'basic'
 \ }
 
 function! VagrantTransform(cmd) abort
