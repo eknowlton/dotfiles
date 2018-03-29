@@ -55,6 +55,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fishbullet/deoplete-ruby'
+Plug 'tpope/vim-endwise'
 Plug 'uplus/deoplete-solargraph'
 
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }

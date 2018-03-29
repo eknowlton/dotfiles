@@ -34,6 +34,13 @@ autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 " insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" enter pressed twice to complete fix
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return deoplete#mappings#smart_close_popup() . "\<CR>"
+endfunction
+
 " use silversearcher in Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
