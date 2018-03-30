@@ -43,17 +43,23 @@ Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'chase/vim-ansible-yaml'
+
 Plug 'pangloss/vim-javascript'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 Plug 'mxw/vim-jsx'
 Plug 'carlitux/deoplete-ternjs'
-Plug 'othree/html5.vim'
-Plug 'ekalinin/dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
+
+Plug 'othree/html5.vim'
+
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'jwalton512/vim-blade'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'fishbullet/deoplete-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'uplus/deoplete-solargraph'

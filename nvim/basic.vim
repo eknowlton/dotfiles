@@ -1,6 +1,8 @@
 filetype plugin indent on
 colorscheme brogrammer
 
+set clipboard=unnamed
+
 set number
 set relativenumber
 set cursorline
@@ -96,7 +98,7 @@ let g:airline#extensions#tabline#show_tabs = 1 " enable/disable displaying tabs
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 
 " closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.jsx,*.js'
 
 " Fugitive
 " fix issue not getting commands
@@ -151,6 +153,8 @@ let g:go_highlight_operators = 1
 :autocmd Filetype ruby set sw=2
 :autocmd Filetype ruby set ts=2
 
+:autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+
 let g:indentLine_enabled = 0
 
 " PHP use statements
@@ -162,4 +166,9 @@ autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " set all yaml files to ansible file type for hightlighting and indents
-au BufRead,BufNewFile *.yml set filetype=ansible
+:au BufRead,BufNewFile *.yml set filetype=ansible
+
+" prettier config
+let g:prettier#config#trailing_comma = 'all'
+
+:autocmd BufWritePre *.js Prettier
