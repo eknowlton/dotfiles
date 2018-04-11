@@ -107,3 +107,4 @@ let g:lmap.q = { 'name' : '+ Quit',
                \ 'q' : ['qa', 'Quit All'],
                \ 'Q' : ['qa!', 'Force Quit All'],
                \ }
+

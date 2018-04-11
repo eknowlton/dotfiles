@@ -114,13 +114,13 @@ if [ -d $HOME/bin ]; then
     export PATH="$PATH:$HOME/bin"
 fi
 
-if [ -d $HOME/.aliases  ]; then
+if [ -d $HOME/.aliases ]; then
     for file in $HOME/.aliases; do
         source file
     done
 fi
 
-if [ -d $HOME/go  ]; then
+if [ -d $HOME/go ]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
 fi
@@ -133,5 +133,9 @@ if hash brew 2>/dev/null; then
     alias ctags="`brew --prefix`/bin/ctags"
 fi
 
-
 alias phpunit="./vendor/bin/phpunit"
+
+if [ -d /usr/local/opt/php@7.1 ]; then
+    export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+    export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+fi

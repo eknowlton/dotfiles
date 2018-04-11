@@ -6,7 +6,7 @@ set clipboard=unnamed
 set number
 set relativenumber
 set cursorline
-set autoindent 
+set autoindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -14,6 +14,9 @@ set softtabstop=4
 set nowrap
 set undofile
 "set autochdir
+
+" Garbage in buffer on iTerm2
+set ttyfast
 
 inoremap jk <ESC>
 
@@ -62,7 +65,7 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_html_checkers = ['html', 'twig', 'css', 'javascript']
 let g:syntastic_css_checkers = ['css']
-"let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_checkers = ['rubocop']
 
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 
@@ -170,5 +173,8 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " prettier config
 let g:prettier#config#trailing_comma = 'all'
+" automatically prettify js on save
+autocmd BufWritePre *.js Prettier
 
-:autocmd BufWritePre *.js Prettier
+" Trim whitespace on stave
+autocmd BufWritePre * :%s/\s\+$//e
