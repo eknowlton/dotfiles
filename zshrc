@@ -89,8 +89,6 @@ export VISUAL='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.bash_profile
-
 if [ -e "$HOME/.fzf_aliases" ]; then
 	source ~/.fzf_aliases
 fi
