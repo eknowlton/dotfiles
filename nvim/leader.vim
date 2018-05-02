@@ -13,6 +13,11 @@ let g:lmap.T = { 'name' : 'Task List',
 			   \ 't' : ['TaskList', 'List All Tasks']
 			   \ }
 
+"----- Syntastic
+let g:lmap.s = { 'name' : 'Syntastic',
+               \ 't' : ['SyntasticToggleMode', 'Toggle Syntastic']
+               \ }
+
 "----- Language
 let g:lmap.l = { 'name' : '+ Language',
 			   \ 't' : ['TagbarToggle', 'Tagbar'],
@@ -94,7 +99,7 @@ let g:lmap.g = { 'name' : '+ Git',
                \ 's' : ['Gstatus', 'Git Status'],
                \ }
 
-" Test 
+" Test
 let g:lmap.t = { 'name' : '+ Testing',
                \ 't' : ['TestNearest', 'Test Nearest'],
                \ 'f' : ['TestFile', 'Test File'],

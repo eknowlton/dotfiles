@@ -25,7 +25,7 @@ inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Use deoplete
-call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
