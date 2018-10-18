@@ -39,6 +39,8 @@ Plug 'vim-scripts/TaskList.vim'
 Plug 'mklabs/split-term.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'w0rp/ale'
+Plug 'sbdchd/neoformat'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'

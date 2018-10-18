@@ -176,3 +176,6 @@ autocmd BufWritePre *.js Prettier
 
 " Trim whitespace on stave
 autocmd BufWritePre * :%s/\s\+$//e
+
+autocmd BufWritePre,InsertLeave *.js Neoformat
+
