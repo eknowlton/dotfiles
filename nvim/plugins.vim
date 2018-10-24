@@ -32,6 +32,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'janko-m/vim-test'
 Plug 'mattn/emmet-vim'
 Plug 'neovim/python-client'
@@ -41,6 +42,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'w0rp/ale'
 Plug 'sbdchd/neoformat'
+Plug 'ashisha/image.vim'
 
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'

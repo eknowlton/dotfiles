@@ -13,6 +13,7 @@ set shiftwidth=4
 set softtabstop=4
 set nowrap
 set undofile
+set autoread
 "set autochdir
 
 " Garbage in buffer on iTerm2
@@ -115,7 +116,7 @@ let g:gitgutter_map_keys = 0
 let g:pdv_template_dir = $HOME . "/.config/nvim/plugged/pdv/templates_snip"
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -177,5 +178,5 @@ autocmd BufWritePre *.js Prettier
 " Trim whitespace on stave
 autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd BufWritePre,InsertLeave *.js Neoformat
+autocmd BufWritePre *.js Neoformat
 
