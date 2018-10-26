@@ -116,7 +116,7 @@ let g:gitgutter_map_keys = 0
 let g:pdv_template_dir = $HOME . "/.config/nvim/plugged/pdv/templates_snip"
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-u>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
