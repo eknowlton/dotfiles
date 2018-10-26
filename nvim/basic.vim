@@ -8,9 +8,9 @@ set relativenumber
 set cursorline
 set autoindent
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set nowrap
 set undofile
 set autoread
@@ -151,11 +151,12 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 
 " ruby
-:autocmd Filetype ruby set softtabstop=2
-:autocmd Filetype ruby set sw=2
-:autocmd Filetype ruby set ts=2
+autocmd Filetype ruby set softtabstop=2
+autocmd Filetype ruby set sw=2
+autocmd Filetype ruby set ts=2
 
-:autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
 
 let g:indentLine_enabled = 0
 
@@ -178,5 +179,4 @@ autocmd BufWritePre *.js Prettier
 " Trim whitespace on stave
 autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd BufWritePre *.js Neoformat
-
+autocmd BufWritePre *.js,*.ts,*.tsx Neoformat
