@@ -30,6 +30,9 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.tsx'
+
 if isdirectory('.git')
     let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 endif

@@ -16,6 +16,8 @@ Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
+Plug 'alvan/vim-closetag'
+
 let b:ale_fixers = ['prettier']
 
 " Initialize plugin system
