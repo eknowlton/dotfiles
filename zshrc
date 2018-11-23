@@ -137,6 +137,7 @@ if [ -d /usr/local/opt/php@7.1 ]; then
     export PATH="/usr/local/opt/php@7.1/bin:$PATH"
     export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
 fi
+
 export PATH="/usr/local/sbin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -144,4 +145,10 @@ if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/path.zsh.inc' ]; then .
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+if [ -d ~/.yarn ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
+
 eval $(thefuck --alias)
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

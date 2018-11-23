@@ -1,4 +1,4 @@
-" Vim color file
+color file
 " Converted from Textmate theme Brogrammer using Coloration v0.4.0 (http://github.com/sickill/coloration)
 
 set background=dark
