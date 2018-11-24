@@ -3,19 +3,21 @@ nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 
 call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<cr>
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
 
 let g:lmap = {}
 
 "----- Files
 let g:ranger_map_keys = 0 " Ranger auto maps this to <leader>f
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:lmap.f = { 'name' : 'Files',
-                \ 'f' : ['CtrlP', 'Find Files (CtrlP)'],
-		\ 'r' : ['Ranger', 'Find Files (Ranger)'],
-		\ 's' : ['w', 'Save File'],
-		\ 'S' : ['wa', 'Save All Files'],
-		\ 'x' : ['x', 'Save & Close'],
-                \ }
+	       \ 'r' : ['Ranger', 'Find Files (Ranger)'],
+	       \ 's' : ['w', 'Save File'],
+               \ 'S' : ['wa', 'Save All Files'],
+	       \ 'x' : ['x', 'Save & Close'],
+               \ }
 
 "----- Buffers
 let g:lmap.b = { 'name' : 'Buffers',
@@ -59,6 +61,15 @@ let g:lmap.g = { 'name' : 'Git',
                \ 'P' : ['Gpush', 'Git Push'],
                \ 'r' : ['Gread', 'Git Reset File'],
                \ 's' : ['Gstatus', 'Git Status'],
+               \ }
+
+"----- Testing
+let g:lmap.t = { 'name' : 'Testing',
+               \ 'n' : ['TestNearest', 'Nearest'],
+               \ 'f' : ['TestFile', 'File'],
+               \ 's' : ['TestSuite', 'Suite'],
+               \ 'l' : ['TestLast', 'Last'],
+               \ 'v' : ['TestVisit', 'Visit Last'],
                \ }
 
 "----- Quit
