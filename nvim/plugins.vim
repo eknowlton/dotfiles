@@ -12,11 +12,13 @@ Plug 'w0rp/ale'
 
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
-" Syntax
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 Plug 'alvan/vim-closetag'
+
+Plug 'kassio/neoterm'
+Plug 'janko-m/vim-test'
 
 let b:ale_fixers = ['prettier']
 
