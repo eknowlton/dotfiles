@@ -14,7 +14,7 @@ autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 
 inoremap jk <Esc>
-tnoremap jk <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 set clipboard+=unnamedplus
 
@@ -36,6 +36,10 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.tsx'
 
 let test#strategy = "neoterm"
+
+let g:python_host_prog  = '/bin/python2'
+let g:python3_host_prog = '/bin/python3'
+
 
 if isdirectory('.git')
     let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']

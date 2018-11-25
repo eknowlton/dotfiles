@@ -20,6 +20,9 @@ Plug 'alvan/vim-closetag'
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+
 let b:ale_fixers = ['prettier']
 
 " Initialize plugin system
