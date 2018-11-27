@@ -12,6 +12,8 @@ Plug 'w0rp/ale'
 
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
+Plug 'pangloss/vim-javascript'
+
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
@@ -23,7 +25,7 @@ Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
-let b:ale_fixers = ['prettier']
+Plug 'tpope/vim-endwise'
 
 " Initialize plugin system
 call plug#end()
