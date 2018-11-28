@@ -23,6 +23,8 @@ Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
+Plug 'othree/csscomplete.vim'
+
 let b:ale_fixers = ['prettier']
 
 " Initialize plugin system

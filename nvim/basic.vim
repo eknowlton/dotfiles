@@ -37,6 +37,8 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.tsx'
 
 let test#strategy = "neoterm"
 
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
 if executable('/bin/python2')
     let g:python_host_prog  = '/bin/python2'
 end
