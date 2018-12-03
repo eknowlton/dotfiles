@@ -25,6 +25,8 @@ Plug 'tpope/vim-surround'
 
 Plug 'othree/csscomplete.vim'
 
+Plug 'elixir-editors/vim-elixir'
+
 let b:ale_fixers = ['prettier']
 
 " Initialize plugin system
