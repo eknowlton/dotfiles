@@ -12,6 +12,7 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+autocmd FileType php setlocal ts=4 sts=4 sw=4
 
 inoremap jk <Esc>
 tnoremap <Esc> <C-\><C-n>
@@ -31,8 +32,8 @@ let g:ale_fixers = {
 \}
 
 let g:ale_linters = {
-\ 'typescript': ['tslint'],
-\ 'typescript.tsx': ['tslint']
+\ 'typescript': ['tslint', 'tsserver', 'typecheck'],
+\ 'typescript.tsx': ['tslint', 'tsserver', 'typecheck'],
 \ }
 
 let g:ale_fix_on_save = 1

@@ -12,8 +12,6 @@ Plug 'w0rp/ale'
 
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 
-Plug 'pangloss/vim-javascript'
-
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
@@ -30,6 +28,9 @@ Plug 'othree/csscomplete.vim'
 Plug 'elixir-editors/vim-elixir'
 
 Plug 'tpope/vim-endwise'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()

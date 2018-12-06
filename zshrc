@@ -90,7 +90,7 @@ export VISUAL='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ -e "$HOME/.fzf_aliases" ]; then
-	source ~/.fzf_aliases
+    source ~/.fzf_aliases
 fi
 
 if [ -e "$HOME/.rbenv" ]; then
@@ -123,15 +123,14 @@ if [ -d $HOME/go ]; then
     export PATH=$PATH:$GOPATH/bin
 fi
 
+if [ -d /usr/local/opt/go/libexec ]; then
+    export GOROOT=/usr/local/opt/go/libexec
+    export PATH=$PATH:$GOROOT/bin
+fi
+
 if [ -d $HOME/.cabal/bin ]; then
     export PATH=$PATH:$HOME/.cabal/bin
 fi
-
-if hash brew 2>/dev/null; then
-    alias ctags="`brew --prefix`/bin/ctags"
-fi
-
-alias phpunit="./vendor/bin/phpunit"
 
 if [ -d /usr/local/opt/php@7.1 ]; then
     export PATH="/usr/local/opt/php@7.1/bin:$PATH"
@@ -150,5 +149,6 @@ if [ -d ~/.yarn ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
 
 eval $(thefuck --alias)
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+if [ -d $HOME/.rvm ]; then
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi
