@@ -152,3 +152,9 @@ eval $(thefuck --alias)
 if [ -d $HOME/.rvm ]; then
     export PATH="$PATH:$HOME/.rvm/bin"
 fi
+
+if [ -d $HOME/.asdf ]; then
+    . $HOME/.asdf/asdf.sh
+    . $HOME/.asdf/completions/asdf.bash
+fi
+
