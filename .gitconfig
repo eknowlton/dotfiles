@@ -1,0 +1,27 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Ethan Knowlton
+	email = eknowlton@gmail.com
+	signingkey = 530434924E64C6E2F0D660CED5BB8B63CA8D3BD4
+[core]
+	excludesfile = /Users/ethanknowlton/.gitignore
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[commit]
+        gpgsign = true
+[merge]
+        tool = vimdiff
+[diff]
+        tool = nvimdiff
+[difftool]
+        prompt = false
+[mergetool]
+        prompt = false
+[difftool "nvimdiff"]
+        cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
+[mergetool "nvimdiff"]
+        cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
