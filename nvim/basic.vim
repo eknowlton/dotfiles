@@ -41,8 +41,6 @@ let g:ale_fix_on_save = 1
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.tsx'
 
-let test#strategy = "neoterm"
-
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
 if executable('/bin/python2')

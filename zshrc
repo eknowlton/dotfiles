@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git laravel5 bundler composer common-aliases)
+plugins=(git laravel5 rails bundler composer common-aliases)
 
 # User configuration
 
@@ -93,10 +93,6 @@ if [ -e "$HOME/.fzf_aliases" ]; then
     source ~/.fzf_aliases
 fi
 
-if [ -e "$HOME/.rbenv" ]; then
-    eval "$(rbenv init -)"
-fi
-
 alias ll='ls -la'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -132,11 +128,6 @@ if [ -d $HOME/.cabal/bin ]; then
     export PATH=$PATH:$HOME/.cabal/bin
 fi
 
-if [ -d /usr/local/opt/php@7.1 ]; then
-    export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-    export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
-fi
-
 export PATH="/usr/local/sbin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -149,12 +140,13 @@ if [ -d ~/.yarn ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
 
 eval $(thefuck --alias)
 
-if [ -d $HOME/.rvm ]; then
-    export PATH="$PATH:$HOME/.rvm/bin"
-fi
-
 if [ -d $HOME/.asdf ]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash
 fi
 
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/libiconv/bin:$PATH"
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
