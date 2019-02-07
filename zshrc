@@ -140,8 +140,6 @@ if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc' ]; 
 
 if [ -d ~/.yarn ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
 
-eval $(thefuck --alias)
-
 if [ -d $HOME/.asdf ]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash

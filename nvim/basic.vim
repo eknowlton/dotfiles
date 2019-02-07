@@ -7,6 +7,7 @@ set undofile
 set autoread
 set expandtab
 set smartindent
+set nocompatible
 
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
@@ -19,7 +20,11 @@ tnoremap <Esc> <C-\><C-n>
 
 set clipboard+=unnamedplus
 
+set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 1
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
 
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"

@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-sensible'
+
 Plug 'hecal3/vim-leader-guide'
 
 Plug 'vim-airline/vim-airline'
