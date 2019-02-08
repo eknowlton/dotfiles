@@ -49,6 +49,7 @@ let g:lmap.w = { 'name' : '+ Windows',
 "----- Language
 let g:lmap.l = { 'name' : 'Language',
                \ 'p' : ['ALEFix', 'Run Fixer'],
+               \ 'g' : ['ALEGoToDefinition', 'Go To Definition'],
                \ }
 
 "----- Git

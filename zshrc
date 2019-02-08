@@ -75,12 +75,8 @@ source $ZSH/oh-my-zsh.sh
 #
 bindkey -v
 
-bindkey '^k' up-history
-bindkey '^j' down-history
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
+bindkey '^k' history-beginning-search-backward
+bindkey '^j' history-beginning-search-forward
 
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
