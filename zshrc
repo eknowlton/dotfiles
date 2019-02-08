@@ -72,6 +72,25 @@ source $ZSH/oh-my-zsh.sh
 # else
 #  export EDITOR='mvim'
 # fi
+#
+bindkey -v
+
+bindkey '^k' up-history
+bindkey '^j' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_prompt_info) $EPS1 %F{blue}] %F{green}%D{%L:%M} %F{yellow}%D{%p}%f" 
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
 
 export EDITOR='nvim'
 export VISUAL='nvim'
