@@ -92,11 +92,13 @@ export VISUAL='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ll='ls -la'
+alias vim='nvim'
+alias v='vim'
+
 if [ -e "$HOME/.fzf_aliases" ]; then
     source ~/.fzf_aliases
 fi
-
-alias ll='ls -la'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -104,8 +106,6 @@ alias ll='ls -la'
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 [ -e /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
-
-alias vim='nvim'
 
 if [ -d $HOME/bin ]; then
     export PATH="$PATH:$HOME/bin"
@@ -151,3 +151,4 @@ export PATH="/usr/local/opt/libiconv/bin:$PATH"
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+

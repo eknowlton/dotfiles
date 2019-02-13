@@ -10,6 +10,7 @@ set smartindent
 set nocompatible
 
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType sh setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
@@ -29,11 +30,14 @@ let g:airline#extensions#ale#enabled = 1
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
+let g:ale_set_highlights = 0
+
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'javascript': ['prettier'],
 \ 'typescript': ['prettier'],
 \ 'typescript.jsx': ['prettier'],
+\ 'sh': ['shfmt']
 \}
 
 let g:ale_linters = {
