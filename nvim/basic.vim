@@ -37,12 +37,14 @@ let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'typescript': ['prettier'],
 \ 'typescript.jsx': ['prettier'],
-\ 'sh': ['shfmt']
+\ 'sh': ['shfmt'],
+\ 'ruby': ['standardrb'],
 \}
 
 let g:ale_linters = {
 \ 'typescript': ['tslint', 'tsserver', 'typecheck'],
 \ 'typescript.tsx': ['tslint', 'tsserver', 'typecheck'],
+\ 'ruby': ['standardrb']
 \ }
 
 let g:ale_fix_on_save = 1

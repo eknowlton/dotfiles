@@ -151,4 +151,3 @@ export PATH="/usr/local/opt/libiconv/bin:$PATH"
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-
