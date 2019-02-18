@@ -105,8 +105,6 @@ fi
 # source local zshrc for unix/linux
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-[ -e /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
-
 if [ -d $HOME/bin ]; then
     export PATH="$PATH:$HOME/bin"
 fi
@@ -127,10 +125,6 @@ if [ -d /usr/local/opt/go/libexec ]; then
     export PATH=$PATH:$GOROOT/bin
 fi
 
-if [ -d $HOME/.cabal/bin ]; then
-    export PATH=$PATH:$HOME/.cabal/bin
-fi
-
 export PATH="/usr/local/sbin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -148,6 +142,3 @@ fi
 
 export PATH="/usr/local/opt/bison/bin:$PATH"
 export PATH="/usr/local/opt/libiconv/bin:$PATH"
-
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin

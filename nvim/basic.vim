@@ -15,6 +15,7 @@ autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType php setlocal ts=4 sts=4 sw=4
+autocmd FileType cpp setlocal ts=4 sts=4 sw=4
 
 inoremap jk <Esc>
 tnoremap <Esc> <C-\><C-n>
@@ -31,6 +32,7 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:ale_set_highlights = 0
+let g:ale_ruby_standardrb_options = '--rails'
 
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -44,7 +46,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \ 'typescript': ['tslint', 'tsserver', 'typecheck'],
 \ 'typescript.tsx': ['tslint', 'tsserver', 'typecheck'],
-\ 'ruby': ['standardrb']
+\ 'ruby': ['standardrb', 'rails_best_practices', 'brakeman', 'reek']
 \ }
 
 let g:ale_fix_on_save = 1
