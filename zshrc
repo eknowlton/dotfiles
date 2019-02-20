@@ -5,14 +5,17 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+
+# Simple Themes
 #ZSH_THEME="gallois"
 #ZSH_THEME="kphoen"
 #ZSH_THEME="nanotech"
-# Setting ZSH Theme
+
+# Setting ZSH Theme for Powerline9k
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user vcs newline dir_writable dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time disk_usage ram)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator user dir_writable dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs command_execution_time background_jobs time disk_usage ram)
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 #POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 #POWERLEVEL9K_USER_ICON="\uF415" # 
@@ -24,6 +27,7 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_MODE='nerdfont-complete'
+# END Ponwerlin9k
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
