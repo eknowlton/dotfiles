@@ -14,8 +14,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:lmap.f = { 'name' : 'Files',
 	       \ 'r' : ['Ranger', 'Find Files (Ranger)'],
-	       \ 'f' : ['FZF', 'Find Files (FZF)'],
-	       \ 'F' : ['GFiles', 'Find All Files (GFiles)'],
+	       \ 'F' : ['FZF', 'Find Files (FZF)'],
+	       \ 'f' : ['GFiles', 'Find All Files (GFiles)'],
 	       \ 's' : ['w', 'Save File'],
                \ 'S' : ['wa', 'Save All Files'],
 	       \ 'x' : ['x', 'Save & Close'],
