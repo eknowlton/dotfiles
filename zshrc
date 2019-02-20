@@ -6,11 +6,6 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-# Simple Themes
-#ZSH_THEME="gallois"
-#ZSH_THEME="kphoen"
-#ZSH_THEME="nanotech"
-
 # Setting ZSH Theme for Powerline9k
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -24,10 +19,15 @@ POWERLEVEL9K_ROOT_ICON="\uF09C"
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 #POWERLEVEL9K_VCS_GIT_ICON='\uF408 '
 #POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uF408 '
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+#POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_MODE='nerdfont-complete'
 # END Ponwerlin9k
+
+# Simple Themes
+#ZSH_THEME="gallois"
+#ZSH_THEME="kphoen"
+#ZSH_THEME="nanotech"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
