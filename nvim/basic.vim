@@ -49,6 +49,9 @@ let g:ale_linters = {
 \ 'ruby': ['standardrb', 'rails_best_practices', 'brakeman', 'reek']
 \ }
 
+let g:ale_php_langserver_use_global = 1
+let g:ale_php_langserver_executable = $HOME.'/.composer/vendor/bin/php-language-server.php'
+
 let g:ale_fix_on_save = 1
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
