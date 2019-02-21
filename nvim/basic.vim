@@ -1,3 +1,5 @@
+set exrc
+
 colorscheme brogrammer
 
 set number
@@ -32,7 +34,6 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:ale_set_highlights = 0
-let g:ale_ruby_standardrb_options = '--rails'
 
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -70,3 +71,5 @@ end
 if isdirectory('.git')
     let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 endif
+
+set secure
