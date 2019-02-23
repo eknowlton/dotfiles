@@ -150,8 +150,6 @@ if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/path.zsh.inc' ]; then .
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-if [ -d ~/.yarn ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
-
 if [ -d $HOME/.asdf ]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash
