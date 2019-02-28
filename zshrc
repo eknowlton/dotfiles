@@ -7,8 +7,10 @@ export ZSH=~/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 
 # Setting ZSH Theme for Powerline9k
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE="nerdfont-complete"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+
+# START Powerline9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator user dir_writable dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs command_execution_time background_jobs time disk_usage ram)
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
@@ -140,11 +142,6 @@ if [ -d $HOME/go ]; then
     export PATH=$PATH:$GOPATH/bin
 fi
 
-if [ -d /usr/local/opt/go/libexec ]; then
-    export GOROOT=/usr/local/opt/go/libexec
-    export PATH=$PATH:$GOROOT/bin
-fi
-
 export PATH="/usr/local/sbin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -152,8 +149,6 @@ if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/path.zsh.inc' ]; then .
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ethanknowlton/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-if [ -d ~/.yarn ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
 
 if [ -d $HOME/.asdf ]; then
     . $HOME/.asdf/asdf.sh
