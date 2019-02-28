@@ -2,3 +2,4 @@ tags
 /.yardoc
 /doc
 /.vscode
+.vimrc

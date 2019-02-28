@@ -1,1 +1,0 @@
-/Users/ethanknowlton/dotfiles/nvim/init.vim
