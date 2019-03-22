@@ -8,11 +8,10 @@ export ZSH=~/.oh-my-zsh
 
 # Setting ZSH Theme for Powerline9k
 #ZSH_THEME="powerlevel9k/powerlevel9k"
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 # START Powerline9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator user dir_writable dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs command_execution_time background_jobs time disk_usage ram)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs command_execution_time background_jobs time ram disk_usage)
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 #POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 #POWERLEVEL9K_USER_ICON="\uF415" # 
@@ -25,6 +24,8 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_MODE='nerdfont-complete'
 # END Ponwerlin9k
+#
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 # Simple Themes
 #ZSH_THEME="gallois"
